@@ -1,0 +1,4 @@
+- Be concise.
+- This is a Trading Crypto Bot backend server called Siobot.
+- The code should be written in TypeScript and be blazingly fast.
+- It uses Bun instead of Node or npm.

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Trading Journal - SioBot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>SioBot Trading Journal</h1>
+        <div class="subtitle" id="generated-at"></div>
+      </header>
+
+      <!-- Period Tabs -->
+      <nav class="period-tabs">
+        <button class="period-tab active" data-period="7d">Last 7 Days</button>
+        <button class="period-tab" data-period="30d">Last 30 Days</button>
+        <button class="period-tab" data-period="1y">Last Year</button>
+        <button class="period-tab" data-period="all">All Time</button>
+      </nav>
+
+      <!-- Metrics Cards -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="label">Net P&L</div>
+          <div class="value" id="net-pnl">$0.00</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Profit Factor</div>
+          <div class="value" id="profit-factor">0.00</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Win Rate</div>
+          <div class="value" id="win-rate">0.0%</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Total Trades</div>
+          <div class="value" id="total-trades">0</div>
+        </div>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts-section">
+        <div class="chart-container">
+          <h3>Performance Overview</h3>
+          <div class="chart-wrapper">
+            <canvas id="radar-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-container">
+          <h3>Cumulative P&L</h3>
+          <div class="chart-wrapper">
+            <canvas id="cum-pnl-chart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calendar Section -->
+      <section class="calendar-section">
+        <div class="calendar-header">
+          <h3 id="month-label">January 2025</h3>
+          <div class="calendar-nav">
+            <button id="prev-month">&lt; Prev</button>
+            <button id="next-month">Next &gt;</button>
+          </div>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+      </section>
+
+      <!-- Day Detail Modal -->
+      <div class="day-detail-overlay" id="day-detail-overlay"></div>
+      <div class="day-detail" id="day-detail">
+        <h4>
+          <span id="day-detail-date"></span>
+          <button class="close-btn" id="close-detail">&times;</button>
+        </h4>
+        <ul class="trade-list" id="day-detail-trades"></ul>
+      </div>
+
+      <!-- Config Preview Modal -->
+      <div class="config-modal-overlay" id="config-modal-overlay"></div>
+      <div class="config-modal" id="config-modal">
+        <div class="config-modal-header">
+          <h4>Bot Configuration</h4>
+          <button class="close-btn" id="close-config-modal">&times;</button>
+        </div>
+        <div class="config-modal-content">
+          <pre id="config-modal-json"></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Embedded Journal Data -->
+    <script>
+      window.JOURNAL_DATA = {{journalDataJSON}};
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

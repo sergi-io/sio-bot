@@ -1,0 +1,25 @@
+# Sio Bot Systemd Service File
+# This file defines a systemd service for running the Sio Bot application.
+# It ensures that the application starts on boot and restarts automatically if it crashes.
+# To use this service:
+# 1. Save this file as /etc/systemd/system/sio-bot.service
+# 2. Reload systemd to recognize the new service: sudo systemctl daemon-reload
+# 3. Enable the service to start on boot: sudo systemctl enable sio-bot
+# 4. Start the service: sudo systemctl start sio-bot
+
+[Unit]
+Description=Sio Bot
+Wants=sio-nexus.service
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 10
+ExecStart=/home/sortegam/sio-bot/sio-bot run
+WorkingDirectory=/home/sortegam/sio-bot
+Restart=always
+RestartSec=5
+User=sortegam
+CPUAffinity=0 1 2 3 4 5
+
+[Install]
+WantedBy=multi-user.target

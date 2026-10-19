@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Trading risk disclaimer</title>
+  <desc id="desc">This bot is an experiment built for fun. It can lose money. Use at your own risk. The config optimizer can generate overfitted results that fail in live trading.</desc>
+  <rect width="1200" height="320" rx="20" fill="#b91c1c"/>
+  <text x="48" y="68" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    <tspan x="48" dy="0">DISCLAIMER</tspan>
+    <tspan x="48" dy="50" font-size="24" font-weight="600">This bot is an experiment built for fun. It is not financial advice or a safety-tested product.</tspan>
+    <tspan x="48" dy="38" font-size="24" font-weight="600">This bot can lose money. Use it entirely at your own risk.</tspan>
+    <tspan x="48" dy="38" font-size="24" font-weight="600">Do not assume backtests, paper trading, or live execution will be profitable.</tspan>
+    <tspan x="48" dy="38" font-size="24" font-weight="600">The config optimizer can generate overfitted strategies that collapse out of sample.</tspan>
+    <tspan x="48" dy="38" font-size="24" font-weight="600">You are responsible for configuration, deployment, monitoring, and capital risk.</tspan>
+  </text>
+</svg>
